@@ -63,10 +63,11 @@ export function Sky() {
     if (m) {
       puffs.forEach((p, i) => {
         const base = (p.cloud / 6) * Math.PI * 2 + (vis.reduced ? 0 : vis.t * 0.012 * (1 + (p.cloud % 3) * 0.3));
-        const radius = 13 + (p.cloud % 3) * 2.2;
+        const radius = 10.5 + (p.cloud % 3) * 2.6;
         // smog pulls the clouds down and makes them swell
         const lower = clamp01((smog - 0.45) * 2);
-        const y = 6.5 + (p.cloud % 2) * 1.8 - lower * 2.2;
+        // the island floats above the clouds, so they never hide it
+        const y = -3.4 - (p.cloud % 2) * 1.7;
         const s = p.s * (1 + lower * 0.5) * (vis.intro > 0.4 ? 1 : 0);
         tmp.position.set(Math.cos(base) * radius + p.dx, y + p.dy, Math.sin(base) * radius + p.dz);
         tmp.rotation.set(0, 0, 0);

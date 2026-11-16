@@ -1334,12 +1334,6 @@ input[type='range']::-moz-range-thumb {
   .gauge .g-label {
     font-size: 13px;
   }
-  .lbl-long {
-    display: inline;
-  }
-  .lbl-short {
-    display: none;
-  }
   .gauge .g-unit {
     font-size: 12px;
   }
@@ -1403,5 +1397,14 @@ input[type='range']::-moz-range-thumb {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .lbl-long {
+    display: inline;
+  }
+  .lbl-short {
+    display: none;
   }
 }
